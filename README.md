@@ -2,7 +2,9 @@
 
 Script to export N5 subvolumes to MRC files.
 
-Install with `pip install git+https://github.com/clbarnes/n5mrc.git`
+Supports python 3.7+.
+
+Install with `python3 -m pip install git+https://github.com/clbarnes/n5mrc.git`
 
 ```_n5mrc
 usage: n5mrc [-h] [-f] [-s SUBVOLUME] container dataset outfile
