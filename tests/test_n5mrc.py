@@ -33,7 +33,7 @@ def assert_mrc_eq_n5(mrc_path, root, ds, sub=None):
     assert np.allclose(n5_arr, mrc_arr)
 
 
-@pytest.mark.parametrize("sub", [None, (slice(2, 8),)*3])
+@pytest.mark.parametrize("sub", [None, (slice(2, 8),) * 3])
 def test_converts(n5_root, dtype, tmpdir, sub):
     mrc_path = str(tmpdir.join(dtype.name + ".mrc"))
     in_ds = dtype.name
@@ -42,12 +42,15 @@ def test_converts(n5_root, dtype, tmpdir, sub):
     assert_mrc_eq_n5(mrc_path, n5_root, dtype.name, sub)
 
 
-@pytest.mark.parametrize(["to_parse", "expected"], [
-    ("10:100", (slice(10, 100),)),
-    (":100", (slice(None, 100),)),
-    ("10:", (slice(10, None),)),
-    ("10", (10,))
-])
+@pytest.mark.parametrize(
+    ["to_parse", "expected"],
+    [
+        ("10:100", (slice(10, 100),)),
+        (":100", (slice(None, 100),)),
+        ("10:", (slice(10, None),)),
+        ("10", (10,)),
+    ],
+)
 def test_parse_sub(to_parse, expected):
     parsed = parse_subvolume(to_parse)
     assert parsed == expected
