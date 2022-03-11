@@ -36,7 +36,10 @@ def parse_subvolume(s):
             and parts[0] >= parts[1]
         ):
             raise ValueError("Cannot reverse dimensions")
-        out.append(slice(*parts))
+        if ":" in dim:
+            out.append(slice(*parts))
+        else:
+            out.append(parts[0])
     return tuple(out)
 
 
