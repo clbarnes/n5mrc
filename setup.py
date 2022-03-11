@@ -14,7 +14,7 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(include=["n5mrc"]),
     install_requires=["mrcfile", "numpy", "zarr", "dask"],
-    python_requires=">=3.8, <4.0",
+    python_requires=">=3.7, <4.0",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "License :: OSI Approved :: MIT License",
