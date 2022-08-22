@@ -13,7 +13,7 @@ setup(
     long_description=readme,
     long_description_content_type="text/markdown",
     packages=find_packages(include=["n5mrc"]),
-    install_requires=["mrcfile", "numpy", "zarr", "dask"],
+    install_requires=["mrcfile", "numpy", "zarr", "dask", "requests", "aiohttp"],
     python_requires=">=3.7, <4.0",
     classifiers=[
         "Development Status :: 3 - Alpha",
